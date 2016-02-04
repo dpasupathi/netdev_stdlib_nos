@@ -1,0 +1,85 @@
+
+CREATE_VLAN_INTERFACE: 	"<interface-vlan xmlns=\"urn:brocade.com:mgmt:brocade-interface\"> 
+			<interface> 
+				<vlan> 
+					<name>FILL</name>
+				</vlan>
+			</interface>
+		</interface-vlan>"
+
+# Delete VLAN (vlan_id)
+DELETE_VLAN_INTERFACE: "
+        		<interface-vlan xmlns=\"urn:brocade.com:mgmt:brocade-interface\">
+            		<interface>
+                		<vlan operation=\"delete\">
+					<name>FILL</name>
+                		</vlan>
+            		</interface>
+        		</interface-vlan>"
+
+INTERFACE: "	<interface xmlns=\"urn:brocade.com:mgmt:brocade-interface\"> 
+         		</interface>"
+
+SWITCH_PORT_BASIC: "   <switchport-basic>
+                        <basic></basic>
+                </switchport-basic>"
+
+SWITCH_PORT_TRUNK: " <switchport>
+	               <mode>
+        	          <vlan-mode>trunk</vlan-mode>
+	               </mode>
+        	    </switchport>"
+
+SWITCH_PORT_TAG_VLAN: " <switchport>
+               		<mode>
+	                  <vlan-mode>trunk</vlan-mode>
+        	       </mode>
+	               <trunk>
+        	          <allowed>
+                	     <vlanoper>
+	                        <vlan>
+	                        </vlan>
+
+        	             </vlanoper>
+                	  </allowed>
+	                  <tag>
+        	             <native-vlan></native-vlan>
+                	  </tag>
+	               </trunk>
+        	    </switchport>"
+
+SWITCH_PORT_NATIVE_VLAN: " <switchport>
+               			<mode>
+		                  <vlan-mode>trunk</vlan-mode>
+		               </mode>
+		               <trunk>
+		                  <tag>
+		                     <native-vlan></native-vlan>
+		                  </tag>
+                		  <native-vlan-classification>
+		                        <native-vlan-id>FILL</native-vlan-id>
+                		  </native-vlan-classification>
+		               </trunk>
+		            </switchport>"
+
+SWITCH_PORT_UNTAG_VLAN: " <switchport>
+                        	<mode>
+                                	<vlan-mode>access</vlan-mode>
+	                        </mode>
+        	                <access>
+                	                <accessvlan>FILL</accessvlan>
+                        	</access>
+	                </switchport>"
+
+
+CONFIG_LAG:
+      "<interface xmlns=\"urn:brocade.com:mgmt:brocade-interface\"> 
+        <port-channel>
+            <name>FILL</name>
+         </port-channel>
+      </interface>"
+
+CONFIG_PHY_INTERFACE:
+        "<interface xmlns=\"urn:brocade.com:mgmt:brocade-interface\"> 
+        </interface>"
+
