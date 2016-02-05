@@ -24,6 +24,8 @@
 * License for the specific language governing permissions and limitations
 * under the License.
 *
+* LICENSE (BSD-2)
+* ===============
 * Copyright (c) 2013, Juniper Networks
 * All rights reserved.
 *
